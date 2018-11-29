@@ -1,0 +1,31 @@
+from pwn import *
+
+x = '''
+addiu $sp, $sp, -0x18
+sw $fp, 0x14($sp)
+move $fp, $sp
+sw $zero, 0x10($fp)
+ori $at, $zero, 0xc85a
+sw $at, 0xc($fp)
+ori $at, $zero, 0xbfd3
+sw $at, 8($fp)
+ori $at, $zero, 0xd279
+sw $at, 4($fp)
+ori $at, $zero, 0x934a
+sw $at, ($fp)
+lw $at, 0xc($fp)
+ori $at, $at, 0xbbf8
+lw $v0, 8($fp)
+addu $at, $at, $v0
+lw $v0, 4($fp)
+addu $at, $at, $v0
+lw $v0, ($fp)
+mul $v0, $at, $v0
+move $sp, $fp
+lw $fp, 0x14($sp)
+addiu $sp, $sp, 0x18
+jr $ra
+nop
+'''
+
+print (asm(x))

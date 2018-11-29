@@ -1,0 +1,23 @@
+no B, ! in flag, except last one
+input[3] == 'cb_ZP2'
+input[4:7] == 'Ob5' # or input[3:6] == 'Ob5'
+input[2] == 'a' # ret 0
+input[11] == 'a' # ret 0
+input[15] == 'a'
+input[26] == 'a'
+input[32] == 'a' # ?
+input[36] == 'a'
+input[6:11] == "0l3te"
+input[16:18] == "and"
+input[41] == ?
+input[31:36] == "l3v3l"
+input[20:30] == "UnS0lv4bl3"
+
+2 == 11
+15 == 26
+32 == 36
+
+# Ob50l3te_and_UnS0lv4bl3_l3v3l_CH3AT3R5!
+# aa#Ob50l3te#aaa_and#UnS0lv4bl3#l3v3l#aaa#aaaaaaaa!
+trouble : 0x80490a0
+0x8048e34 ??

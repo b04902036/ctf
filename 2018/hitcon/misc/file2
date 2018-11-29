@@ -1,0 +1,30 @@
+stwu r1, -0x30(r1)
+stw r31, 0x2c(r1)
+mr r31, r1
+li r3, 0
+stw r3, 0x28(r31)
+li r3, 0x438f
+stw r3, 0x24(r31)
+lis r3, 0
+ori r4, r3, 0xe423
+stw r4, 0x20(r31)
+li r4, 0x20ea
+stw r4, 0x1c(r31)
+ori r4, r3, 0xa8a5
+stw r4, 0x18(r31)
+ori r3, r3, 0xa684
+stw r3, 0x14(r31)
+lwz r3, 0x24(r31)
+addi r3, r3, -0x58c6
+addis r3, r3, 1
+lwz r4, 0x20(r31)
+or r3, r3, r4
+lwz r4, 0x1c(r31)
+subf r3, r4, r3
+lwz r4, 0x18(r31)
+and r3, r3, r4
+lwz r4, 0x14(r31)
+add r3, r3, r4
+lwz r31, 0x2c(r1)
+addi r1, r1, 0x30
+blr

@@ -1,0 +1,78 @@
+
+chall:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000400080 <.text>:
+  400080:	eb 50                	jmp    0x4000d2
+  400082:	48 31 c0             	xor    rax,rax
+  400085:	fe c0                	inc    al
+  400087:	48 31 ff             	xor    rdi,rdi
+  40008a:	48 ff c7             	inc    rdi
+  40008d:	5e                   	pop    rsi
+  40008e:	b2 2e                	mov    dl,0x2e
+  400090:	0f 05                	syscall 
+  400092:	2c 2e                	sub    al,0x2e
+  400094:	ff cf                	dec    edi
+  400096:	0f 05                	syscall 
+  400098:	48 0f b6 7e 01       	movzx  rdi,BYTE PTR [rsi+0x1]
+  40009d:	48 31 3e             	xor    QWORD PTR [rsi],rdi
+  4000a0:	48 ff c6             	inc    rsi
+  4000a3:	48 ff ca             	dec    rdx
+  4000a6:	75 f0                	jne    0x400098
+  4000a8:	83 e1 2e             	and    ecx,0x2e
+  4000ab:	80 c1 26             	add    cl,0x26
+  4000ae:	48 8d 7e 07          	lea    rdi,[rsi+0x7]
+  4000b2:	48 8d 77 cb          	lea    rsi,[rdi-0x35]
+  4000b6:	f3 a6                	repz cmps BYTE PTR ds:[rsi],BYTE PTR es:[rdi]
+  4000b8:	48 85 c9             	test   rcx,rcx
+  4000bb:	75 49                	jne    0x400106
+  4000bd:	34 2f                	xor    al,0x2f
+  4000bf:	68 59 61 79 21       	push   0x21796159
+  4000c4:	48 89 e6             	mov    rsi,rsp
+  4000c7:	b2 04                	mov    dl,0x4
+  4000c9:	bf 01 00 00 00       	mov    edi,0x1
+  4000ce:	0f 05                	syscall 
+  4000d0:	eb 34                	jmp    0x400106
+  4000d2:	e8 ab ff ff ff       	call   0x400082
+  4000d7:	57                   	push   rdi
+  4000d8:	65 6c                	gs ins BYTE PTR es:[rdi],dx
+  4000da:	63 6f 6d             	movsxd ebp,DWORD PTR [rdi+0x6d]
+  4000dd:	65 20 74 6f 20       	and    BYTE PTR gs:[rdi+rbp*2+0x20],dh
+  4000e2:	74 68                	je     0x40014c
+  4000e4:	69 73 20 43 68 61 6c 	imul   esi,DWORD PTR [rbx+0x20],0x6c616843
+  4000eb:	6c                   	ins    BYTE PTR es:[rdi],dx
+  4000ec:	21 20                	and    DWORD PTR [rax],esp
+  4000ee:	0a 45 6e             	or     al,BYTE PTR [rbp+0x6e]
+  4000f1:	74 65                	je     0x400158
+  4000f3:	72 20                	jb     0x400115
+  4000f5:	74 68                	je     0x40015f
+  4000f7:	65 20 4b 65          	and    BYTE PTR gs:[rbx+0x65],cl
+  4000fb:	79 20                	jns    0x40011d
+  4000fd:	74 6f                	je     0x40016e
+  4000ff:	20 77 69             	and    BYTE PTR [rdi+0x69],dh
+  400102:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  400103:	3a 20                	cmp    ah,BYTE PTR [rax]
+  400105:	00 31                	add    BYTE PTR [rcx],dh
+  400107:	c0                   	(bad)  
+  400108:	b0 3c                	mov    al,0x3c
+  40010a:	0f 05                	syscall 
+  40010c:	0a 0d 06 1c 22 38    	or     cl,BYTE PTR [rip+0x38221c06]        # 0x38621d18
+  400112:	18 26                	sbb    BYTE PTR [rsi],ah
+  400114:	36 0f 39             	ss (bad) 
+  400117:	2b 1c 59             	sub    ebx,DWORD PTR [rcx+rbx*2]
+  40011a:	42 2c 36             	rex.X sub al,0x36
+  40011d:	1a 2c 26             	sbb    ch,BYTE PTR [rsi+riz*1]
+  400120:	1c 17                	sbb    al,0x17
+  400122:	2d 39 57 43 01       	sub    eax,0x1435739
+  400127:	07                   	(bad)  
+  400128:	2b 38                	sub    edi,DWORD PTR [rax]
+  40012a:	09 07                	or     DWORD PTR [rdi],eax
+  40012c:	1a 01                	sbb    al,BYTE PTR [rcx]
+  40012e:	17                   	(bad)  
+  40012f:	13 13                	adc    edx,DWORD PTR [rbx]
+  400131:	17                   	(bad)  
+  400132:	2d 39 0a 0d 06       	sub    eax,0x60d0a39
+  400137:	46 5c                	rex.RX pop rsp
+  400139:	7d                   	.byte 0x7d
